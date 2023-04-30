@@ -34,5 +34,12 @@ pipeline {
                 }
             }
         }
+        stage('Kubernetes deploy') {
+            steps {
+                withKubeConfig([credentialsId: 'kubectl-credentials', serverUrl: 'https://14CF4CE3744C1CBC7228DB21707FF4A3.gr7.ap-southeast-2.eks.amazonaws.com', clusterName: 'dev-cluster']) {
+                    sh 'kubectl apply -f k8s.yaml'
+                }
+            }
+        }
     }
 }
