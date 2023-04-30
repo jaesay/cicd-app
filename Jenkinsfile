@@ -25,4 +25,22 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo "This will always run"
+        }
+        success {
+            echo "This will run when the run finished successfully"
+        }
+        failure {
+            echo "This will run if failed"
+        }
+        unstable {
+            echo "This will run when the run was marked as unstable"
+        }
+        changed {
+            echo "This will run when the state of the pipeline has changed"
+        }
+    }
 }
