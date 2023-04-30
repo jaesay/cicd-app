@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cicd-app
-          image: public.ecr.aws/h8k6p4l6/cicd-app:0.0.1-SNAPSHOT
+          image: 349495027745.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-app:0.0.1-SNAPSHOT
           ports:
             - containerPort: 8080
 ---
